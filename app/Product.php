@@ -12,8 +12,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use SoftDeletes;
+
 	const PRODUCTO_DISPONIBLE = 'disponible';
 	const PRODUCTO_NO_DISPONIBLE = 'no disponible';
+
     protected $dates = ['deleted_at'];
     protected $fillable = [
     	'name',
@@ -22,6 +24,10 @@ class Product extends Model
     	'status',
     	'image',
     	'seller_id',
+    ];
+
+    protected $hidden = [
+        'pivot'
     ];
 
     public function estadoDisponible(){

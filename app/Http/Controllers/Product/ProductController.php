@@ -18,7 +18,6 @@ class ProductController extends ApiController
    
     public function show(Product $product)
     {
-        dd($product);
         return $this->showOne($product);
     }
 

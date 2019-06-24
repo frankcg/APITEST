@@ -94,8 +94,9 @@ class Handler extends ExceptionHandler
         }
 
         if(config('app.debug')){
-            return parent::render($request, $exception);
+            return parent::render($request, $exception); //EN MODO DEBUG
         }
+        //EN MODO PRODUCCION
         return $this->errorResponse('Error interno del servidor. Intente Luego !!',500);
         
     }
